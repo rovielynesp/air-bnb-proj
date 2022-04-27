@@ -1,0 +1,21 @@
+/// <reference types="cypress" />
+
+context('Signup flow - happy path', () => {
+  beforeEach(() => {
+    cy.visit('localhost:3000/register')
+  });
+
+  it('Succesfully signs up', () => {
+    const data = {
+      firstName: 'Rov',
+      lastName: 'Esp',
+      email: 'rov@mail.com',
+      password: '12345'
+    }
+
+    cy.get('#firstNameInput')
+      .focus()
+      .type(data.firstName);
+
+  })
+})
